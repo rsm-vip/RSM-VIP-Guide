@@ -82,13 +82,14 @@
     pointer-events:none;
   }
   .hero-inner{max-width:1080px; margin:0 auto; position:relative;}
-  .hero .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--brass-bright); text-transform:uppercase;}
+  .hero-logo{display:block; width:150px; height:auto; max-width:100%; object-fit:contain; object-position:left center;}
   .hero h1{font-size:clamp(40px,6vw,72px); font-weight:500; margin:18px 0 10px; max-width:14ch; line-height:1.02;}
   .hero p{font-size:17px; color:rgba(241,236,223,0.72); max-width:52ch; margin:0 0 32px;}
   .hero-meta{display:flex; gap:36px; flex-wrap:wrap;}
   .hero-meta div{border-left:1px solid var(--line-strong); padding-left:14px;}
   .hero-meta .k{font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:rgba(241,236,223,0.5);}
   .hero-meta .v{font-size:15px; margin-top:4px;}
+  @media(max-width:600px){.hero-logo{width:116px;}}
 
   section{padding:64px 32px; max-width:1080px; margin:0 auto; scroll-margin-top:112px;}
   .section-head{display:block; margin-bottom:36px; border-bottom:1px solid var(--line); padding-bottom:18px;}
@@ -431,7 +432,7 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">Tournament VIP Programme</div>
+    <img class="hero-logo" src="images/rsm-logo.png" alt="Rolex Shanghai Masters and ATP Masters 1000">
     <h1 class="display">Everything for your day, courtside.</h1>
     <p>Today's matches, getting to the venue, opening hours and dining, and step-by-step wayfinding to your seats.</p>
     <div class="hero-meta">
