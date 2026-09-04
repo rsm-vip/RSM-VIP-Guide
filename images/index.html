@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Guide — Shanghai Masters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#002D72;
+    --ink-soft:#0A4488;
+    --ivory:#F1ECDF;
+    --brass:#B18F2E;
+    --brass-bright:#B18F2E;
+    --line:rgba(241,236,223,0.14);
+    --line-strong:rgba(241,236,223,0.28);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--ivory);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace; letter-spacing:0.02em;}
+  h1,h2,h3,.display{font-family:'Fraunces',serif;}
+  a{color:inherit;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,26,34,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 32px;
+  }
+  .brand{display:flex; flex-direction:column; line-height:1;}
+  .brand .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; color:var(--brass-bright); text-transform:uppercase;}
+  .brand .name{font-size:19px; margin-top:4px;}
+  .nav-scroll-shell{min-width:0;}
+  .navlinks{display:flex; gap:28px; font-size:13px;}
+  .navlinks a{text-decoration:none; opacity:0.75; padding-bottom:4px; border-bottom:1px solid transparent; transition:opacity .2s, border-color .2s;}
+  .navlinks a:hover{opacity:1; border-color:var(--brass-bright);}
+  @media(max-width:820px){
+    .topbar{padding:12px 16px; flex-wrap:wrap; gap:10px;}
+    .nav-scroll-shell{
+      position:relative; order:3; width:calc(100% + 16px); margin-right:-16px; overflow:hidden;
+    }
+    .nav-scroll-shell::before,.nav-scroll-shell::after{
+      content:""; position:absolute; top:0; bottom:0; z-index:2; width:34px;
+      pointer-events:none; opacity:0; transition:opacity .2s ease;
+    }
+    .nav-scroll-shell::before{left:0; background:linear-gradient(to right, rgba(11,26,34,.98), rgba(11,26,34,0));}
+    .nav-scroll-shell::after{right:0; background:linear-gradient(to left, rgba(11,26,34,.98), rgba(11,26,34,0));}
+    .nav-scroll-shell.has-scroll-left::before,.nav-scroll-shell.has-scroll-right::after{opacity:1;}
+    .navlinks{
+      width:100%; gap:22px; overflow-x:auto; padding:2px 44px 4px 0;
+      white-space:nowrap; scroll-behavior:smooth; scrollbar-width:none;
+      -webkit-overflow-scrolling:touch; overscroll-behavior-x:contain;
+    }
+    .navlinks a{flex:0 0 auto;}
+    .navlinks::-webkit-scrollbar{display:none;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:96px 32px 72px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 79px, var(--line) 79px 80px),
+      radial-gradient(ellipse at 20% 0%, rgba(176,141,87,0.14), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-inner{max-width:1080px; margin:0 auto; position:relative;}
+  .hero-logo{display:block; width:150px; height:auto; max-width:100%; object-fit:contain; object-position:left center;}
+  .hero h1{font-size:clamp(40px,6vw,72px); font-weight:500; margin:18px 0 10px; max-width:14ch; line-height:1.02;}
+  .hero p{font-size:17px; color:rgba(241,236,223,0.72); max-width:52ch; margin:0 0 32px;}
+  .hero-meta{display:flex; gap:36px; flex-wrap:wrap;}
+  .hero-meta div{border-left:1px solid var(--line-strong); padding-left:14px;}
+  .hero-meta .k{font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:rgba(241,236,223,0.5);}
+  .hero-meta .v{font-size:15px; margin-top:4px;}
+  @media(max-width:600px){.hero-logo{width:116px;}}
+
+  section{padding:64px 32px; max-width:1080px; margin:0 auto; scroll-margin-top:112px;}
+  .section-head{display:block; margin-bottom:36px; border-bottom:1px solid var(--line); padding-bottom:18px;}
+  .section-head h2{max-width:100%; margin:0; font-size:30px; font-weight:500; line-height:1.15;}
+  @media(max-width:600px){
+    .section-head{margin-bottom:28px; padding-bottom:16px;}
+    .section-head h2{font-size:clamp(27px,7.5vw,30px); line-height:1.12;}
+  }
+
+  /* ---------- today grid ---------- */
+  .today-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .today-card{background:var(--ink); padding:28px;}
+  .today-card h3{font-size:13px; text-transform:uppercase; letter-spacing:0.12em; font-family:'IBM Plex Mono',monospace; color:var(--brass-bright); margin:0 0 18px;}
+  .hours-row{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px dashed var(--line); font-size:14px;}
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row span:first-child{color:rgba(241,236,223,0.65);}
+  .hours-row span:last-child{font-family:'IBM Plex Mono',monospace;}
+  .hospitality-open-row{margin-bottom:8px; border:1px solid rgba(177,143,46,.45); padding:12px 14px;}
+  .hospitality-open-row span:first-child{color:var(--ivory); font-weight:600;}
+  .hospitality-open-row span:last-child{color:var(--brass-bright); font-weight:600;}
+  .concierge-hours{padding:0 0 15px; border-bottom:1px solid var(--line); font-family:'IBM Plex Mono',monospace; font-size:12px; line-height:1.55; color:var(--brass-bright);}
+  .concierge-services{list-style:none; margin:14px 0 0; padding:0;}
+  .concierge-services li{position:relative; padding:9px 0 9px 22px; border-bottom:1px dashed var(--line); font-size:14px; color:rgba(241,236,223,.72);}
+  .concierge-services li:last-child{border-bottom:none;}
+  .concierge-services li::before{content:"·"; position:absolute; left:4px; color:var(--brass-bright); font-weight:700;}
+  .leaving-choice-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;}
+  .leaving-choice{--parking-colour:var(--brass-bright); position:relative; min-height:100%; padding:24px; border:1px solid var(--line-strong); background:var(--ink-soft);}
+  .leaving-choice.public{--parking-colour:#72C7E7;}
+  .leaving-choice::before{content:""; position:absolute; top:-1px; left:-1px; right:-1px; height:4px; background:var(--parking-colour);}
+  .leaving-choice-body{margin-top:20px; padding-top:17px; border-top:1px solid var(--line);}
+  .leaving-choice-body p{margin:0; font-size:13.5px; line-height:1.55; color:rgba(241,236,223,.68);}
+  .leaving-choice-body p + p{margin-top:5px;}
+  .leaving-map-button{margin-top:12px; padding:10px 15px; cursor:pointer; appearance:none;}
+  .dish{display:flex; gap:16px; padding:14px 0; border-bottom:1px solid var(--line);}
+  .dish:last-child{border-bottom:none;}
+  .dish .badge{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--ink); background:var(--brass-bright); padding:3px 8px; height:fit-content; border-radius:2px; white-space:nowrap; text-transform:uppercase; letter-spacing:0.06em;}
+  .dish .dname{font-size:15px; font-weight:500; margin-bottom:3px;}
+  .dish .ddesc{font-size:13px; color:rgba(241,236,223,0.6);}
+  @media(max-width:760px){
+    .today-grid,.leaving-choice-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- suite tabs ---------- */
+  .tabbar{display:flex; gap:8px; margin-bottom:36px; flex-wrap:wrap;}
+  .tabbtn{
+    background:transparent; border:1px solid var(--line-strong); color:var(--ivory);
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+    padding:12px 20px; cursor:pointer; transition:.2s;
+  }
+  .tabbtn.active{background:var(--brass-bright); color:var(--ink); border-color:var(--brass-bright);}
+  .tabbtn:hover:not(.active){border-color:var(--brass-bright);}
+
+  .suite-panel{display:none;}
+  .suite-panel.active{display:block; animation:fade .35s ease;}
+  @keyframes fade{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  .suite-info h3{font-size:26px; margin:0 0 6px; font-weight:500;}
+  .suite-info .loc{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--brass-bright); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px;}
+  .suite-info p.lead{font-size:14.5px; color:rgba(241,236,223,0.72); margin-bottom:26px;}
+  .info-list{list-style:none; padding:0; margin:0;}
+  .info-list li{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
+  .info-list li span:first-child{color:rgba(241,236,223,0.55); font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em;}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--ink); background:var(--brass-bright); padding:13px 22px; text-decoration:none;
+    border:1px solid var(--brass-bright); transition:.2s;
+  }
+  .btn:hover{background:transparent; color:var(--brass-bright);}
+  .btn-row{margin-top:24px; text-align:center;}
+  .placement-note{font-size:12.5px; color:rgba(241,236,223,0.55); margin:0 0 28px;}
+
+  /* ---------- ticket registration ---------- */
+  .registration-lead{display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin:-12px 0 24px; padding:18px 20px; background:var(--brass-bright); color:var(--ink);}
+  .registration-lead-title{font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap;}
+  .registration-lead p{font-size:13.5px; line-height:1.5; margin:0;}
+  .registration-grid{display:grid; grid-template-columns:1.08fr .92fr; gap:14px;}
+  .registration-card{border:1px solid var(--line-strong); background:var(--ink-soft); padding:26px;}
+  .registration-card h3{font-size:21px; font-weight:500; margin:0 0 16px;}
+  .registration-card > p{font-size:13.5px; line-height:1.6; color:rgba(241,236,223,0.66); margin:0 0 20px;}
+  .registration-steps{list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; padding:0; margin:0;}
+  .registration-steps li{padding:15px; border:1px solid var(--line-strong); background:rgba(241,236,223,.025);}
+  .registration-step-head{display:flex; align-items:baseline; gap:8px; margin-bottom:8px;}
+  .registration-step-number{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--brass-bright); white-space:nowrap;}
+  .registration-step-title{font-size:14px; font-weight:600; line-height:1.35;}
+  .registration-step-desc{font-size:12.5px; line-height:1.55; color:rgba(241,236,223,.66); margin:0;}
+  .registration-step-desc strong{color:var(--ivory); font-weight:600;}
+  .guide-panel{align-self:start;}
+  .guide-list{display:grid; gap:8px;}
+  .guide-card{display:flex; align-items:center; justify-content:space-between; gap:14px; border:1px solid var(--line-strong); padding:13px 14px; background:rgba(241,236,223,.025); color:inherit; text-decoration:none; transition:border-color .2s;}
+  .guide-card:hover{border-color:var(--brass-bright);}
+  .guide-language{font-size:14px; font-weight:500;}
+  .guide-format{font-family:'IBM Plex Mono',monospace; font-size:10px; color:rgba(241,236,223,.48); margin-top:4px; text-transform:uppercase; letter-spacing:.08em;}
+  .guide-status{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--brass-bright); text-transform:uppercase; white-space:nowrap;}
+  .bring-card{margin-top:14px; border:1px solid var(--line-strong); padding:26px;}
+  .bring-card h3{font-size:22px; font-weight:500; margin:0 0 6px;}
+  .bring-card > p{font-size:13px; color:rgba(241,236,223,.58); margin:0 0 20px;}
+  .bring-list{list-style:none; display:grid; grid-template-columns:repeat(2,1fr); gap:1px 28px; padding:0; margin:0;}
+  .bring-list li{position:relative; padding:13px 0 13px 30px; border-bottom:1px solid var(--line); font-size:13.5px; line-height:1.45;}
+  .bring-list li::before{content:"✓"; position:absolute; left:0; top:13px; width:18px; height:18px; border:1px solid var(--line-strong); color:var(--brass-bright); font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:17px; text-align:center;}
+  .bring-card > .bring-note{margin:18px 0 0; padding:14px 16px; border-left:3px solid var(--brass-bright); background:rgba(177,143,46,.1); color:var(--ivory); font-size:13.5px; line-height:1.55;}
+  @media(max-width:760px){
+    .registration-lead{display:block;}
+    .registration-lead-title{white-space:normal; margin-bottom:7px;}
+    .registration-grid{grid-template-columns:1fr;}
+    .registration-steps{grid-template-columns:1fr;}
+    .bring-list{grid-template-columns:1fr;}
+    .registration-card,.bring-card{padding:20px;}
+  }
+
+  /* ---------- access / QR ---------- */
+  .access-card{
+    display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+    background:var(--ink-soft); border:1px solid var(--line-strong); padding:28px;
+  }
+  .access-card img{width:120px; height:120px; background:#fff; padding:8px; flex-shrink:0;}
+  .access-card .ac-text h3{font-size:18px; margin:0 0 8px;}
+  .access-card .ac-text p{font-size:13.5px; color:rgba(241,236,223,0.68); margin:0 0 6px; max-width:44ch;}
+  .access-card .ac-url{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--brass-bright);}
+
+  /* ---------- getting there ---------- */
+  .driver-card{background:var(--ink-soft); border:1px solid var(--line-strong); padding:26px 28px;}
+  .driver-card .dc-label{font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.12em; color:var(--brass-bright); margin-bottom:12px;}
+  .driver-card .dc-cn{font-size:23px; font-weight:600; color:var(--ivory); margin:0 0 8px; line-height:1.4;}
+  .driver-card .dc-en{font-size:13.5px; color:rgba(241,236,223,0.68); margin:0 0 4px;}
+  .driver-card .dc-note{font-size:12px; color:rgba(241,236,223,0.5); margin-top:14px;}
+  .parking-choices{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:18px;}
+  .parking-choice{
+    --parking-colour:var(--brass-bright);
+    position:relative; min-height:110px; padding:22px 48px 22px 24px;
+    border:1px solid var(--line-strong); background:var(--ink-soft); color:var(--ivory);
+    text-align:left; cursor:pointer; font:inherit; appearance:none; transition:border-color .2s, background .2s;
+  }
+  .parking-choice.public{--parking-colour:#72C7E7;}
+  .parking-choice::before{content:""; position:absolute; top:-1px; left:-1px; right:-1px; height:4px; background:var(--parking-colour);}
+  .parking-choice::after{content:"+"; position:absolute; right:22px; top:50%; transform:translateY(-50%); font-family:'IBM Plex Mono',monospace; font-size:22px; color:var(--parking-colour);}
+  .parking-choice[aria-selected="true"]{border-color:var(--parking-colour); background:rgba(241,236,223,.06);}
+  .parking-choice[aria-selected="true"]::after{content:"−";}
+  .parking-choice:focus-visible,.parking-map-button:focus-visible,.modal-close:focus-visible{outline:2px solid var(--brass-bright); outline-offset:3px;}
+  .parking-choice-title{display:block; font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; line-height:1.4; letter-spacing:.08em; color:var(--parking-colour);}
+  .parking-choice-sub{display:block; margin-top:9px; font-size:14px; line-height:1.45; color:rgba(241,236,223,.72);}
+  .parking-panel{margin-top:14px; padding:26px; border:1px solid var(--line-strong); background:var(--ink-soft);}
+  .parking-panel[hidden]{display:none;}
+  .parking-panel h3{font-size:22px; font-weight:500; margin:0 0 12px;}
+  .parking-panel p{font-size:13.5px; line-height:1.65; color:rgba(241,236,223,.68); margin:0;}
+  .parking-panel .parking-journey{margin-bottom:8px; color:var(--ivory); font-size:15px;}
+  .parking-panel .parking-journey strong{color:var(--brass-bright); font-weight:600;}
+  .parking-map-button{
+    position:relative; display:block; width:100%; margin-top:22px; padding:0;
+    border:1px solid var(--line-strong); background:#fff; cursor:zoom-in; overflow:hidden;
+  }
+  .parking-map-button:hover{border-color:var(--brass-bright);}
+  .parking-map-button img{display:block; width:100%; height:auto; min-height:280px; object-fit:contain;}
+  .parking-map-hint{
+    position:absolute; right:14px; bottom:14px; padding:9px 12px;
+    background:rgba(0,31,61,.9); color:var(--ivory); border:1px solid rgba(241,236,223,.35);
+    font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1.3; letter-spacing:.06em; text-transform:uppercase;
+  }
+  .map-placeholder{
+    width:100%; aspect-ratio:16/9; margin-top:20px;
+    border:1px dashed var(--line-strong); background:rgba(241,236,223,0.03);
+    display:flex; align-items:center; justify-content:center; color:rgba(241,236,223,0.35);
+    font-family:'IBM Plex Mono',monospace; font-size:11px; text-align:center;
+  }
+  .note-inline{font-size:13px; color:rgba(241,236,223,0.6); margin:14px 0 0; padding-top:14px; border-top:1px dashed var(--line);}
+  @media(max-width:760px){
+    .parking-choices{grid-template-columns:1fr;}
+    .parking-choice{min-height:98px;}
+    .parking-panel{padding:18px;}
+    .parking-map-button img{min-height:220px;}
+  }
+
+  /* ---------- order of play ---------- */
+  .match-row{display:flex; align-items:center; gap:18px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .match-row:last-child{border-bottom:none;}
+  .match-row .match-time{font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--brass-bright); min-width:60px;}
+  .match-row .match-mid{flex:1;}
+  .match-row .match-round{font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:rgba(241,236,223,0.45); margin-bottom:4px;}
+  .match-row .match-players{font-size:15px; word-break:keep-all; overflow-wrap:normal;}
+  .match-row .match-score{margin-top:5px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.4; color:rgba(241,236,223,.72);}
+  .match-row .match-court{font-family:'IBM Plex Mono',monospace; font-size:11px; color:rgba(241,236,223,0.45); text-align:right; white-space:nowrap;}
+  .match-break{display:flex; align-items:center; gap:14px; margin-top:-1px; padding:11px 0 12px; border-top:1px solid rgba(177,143,46,.7);}
+  .match-break .break-label{flex-shrink:0; font-family:'IBM Plex Mono',monospace; font-size:9px; line-height:1.4; text-transform:uppercase; letter-spacing:.12em; color:var(--brass-bright);}
+  .match-break .break-message{font-size:11.5px; line-height:1.5; color:rgba(241,236,223,.55);}
+  @media(max-width:560px){
+    .match-break{align-items:flex-start; flex-direction:column; gap:5px;}
+  }
+  @media(max-width:600px){
+    #order-of-play{padding-left:16px; padding-right:16px;}
+    #daily-order-of-play{padding:4px 12px !important;}
+    .match-row{
+      display:grid; grid-template-columns:38px minmax(0,1fr) max-content;
+      align-items:start; gap:8px; padding:14px 0;
+    }
+    .match-row .match-time{min-width:0; padding-top:1px; font-size:12.5px; line-height:1.35;}
+    .match-row .match-mid{min-width:0;}
+    .match-row .match-round{font-size:9px; line-height:1.35;}
+    .match-row .match-players{font-size:14px; line-height:1.35; word-break:keep-all; overflow-wrap:normal; hyphens:none;}
+    .match-row .match-score{margin-top:4px; font-size:11.5px; line-height:1.35;}
+    .match-row .match-court{min-width:0; max-width:none; font-size:9px; line-height:1.35; white-space:nowrap;}
+  }
+
+  /* ---------- wayfinding phases ---------- */
+  .phase-label{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--brass-bright); margin:0 0 16px;}
+
+  /* ---------- compact step grid (replaces tall vertical waypath) ---------- */
+  .step-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:14px;}
+  .step-card{border:1px solid var(--line-strong); background:var(--ink-soft); padding:14px;}
+  .step-card .sc-num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--brass-bright); margin-bottom:8px;}
+  .step-card .sc-photo{
+    width:100%; aspect-ratio:4/3; border:1px dashed var(--line-strong); background:rgba(241,236,223,0.03);
+    display:flex; align-items:center; justify-content:center; color:rgba(241,236,223,0.35);
+    font-family:'IBM Plex Mono',monospace; font-size:9px; text-align:center; padding:6px; margin-bottom:10px;
+  }
+  .step-card .sc-title{font-size:13.5px; font-weight:500; margin-bottom:5px; line-height:1.3;}
+  .step-card .sc-desc{font-size:11.5px; color:rgba(241,236,223,0.6); line-height:1.5;}
+
+  /* ---------- wayfinding overview + photo landmarks ---------- */
+  .route-intro{max-width:65ch; margin:-12px 0 28px; color:rgba(241,236,223,0.68); font-size:14.5px; line-height:1.65;}
+  .route-map-card{background:var(--ink-soft); border:1px solid var(--line-strong); padding:22px;}
+  .route-map-stage{overflow:hidden; border:1px solid var(--line-strong); background:#fff;}
+  .route-map-stage img{display:block; width:100%; height:auto; object-fit:contain;}
+  .wayfinding-photo-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:22px;}
+  .wayfinding-photo-card{border:1px solid var(--line-strong); background:var(--ink-soft); overflow:hidden;}
+  .wayfinding-photo{display:block; width:100%; aspect-ratio:4/3; border-bottom:1px solid var(--line-strong); background:#fff; object-fit:contain;}
+  .wayfinding-photo-copy{padding:17px 18px 18px;}
+  .wayfinding-photo-copy h3{font-size:18px; font-weight:500; line-height:1.25; margin:0 0 6px;}
+  .wayfinding-photo-copy p{font-size:12.5px; line-height:1.5; color:rgba(241,236,223,.6); margin:0;}
+  @media(max-width:900px){.wayfinding-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:760px){
+    .route-map-card{margin-left:-24px; margin-right:-24px; padding:6px;}
+    .wayfinding-photo-copy h3{font-size:19px;}
+    .wayfinding-photo-copy p{font-size:13px;}
+  }
+  @media(max-width:560px){.wayfinding-photo-grid{grid-template-columns:1fr;}}
+
+  /* ---------- utility row (below hero) ---------- */
+  .utility-row{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+    max-width:1080px; margin:0 auto; padding:0 32px 8px; position:relative;
+  }
+  .utility-card{
+    display:flex; align-items:center; gap:14px;
+    background:var(--ink-soft); border:1px solid var(--line-strong); padding:18px 20px;
+    text-decoration:none; color:var(--ivory); cursor:pointer; transition:.2s;
+    font-family:'Inter',sans-serif;
+  }
+  .utility-card:hover{border-color:var(--brass-bright);}
+  .utility-card.static{cursor:default;}
+  .utility-card.static:hover{border-color:var(--line-strong);}
+  button.utility-card{width:100%; text-align:left; font:inherit; -webkit-appearance:none; appearance:none;}
+  .utility-card .uc-icon{
+    width:38px; height:38px; flex-shrink:0; border-radius:50%; border:1px solid var(--line-strong);
+    display:flex; align-items:center; justify-content:center; color:var(--brass-bright);
+    font-family:'IBM Plex Mono',monospace; font-size:14px;
+  }
+  .utility-card .uc-label{font-size:14px; font-weight:500;}
+  .utility-card .uc-sub{font-size:11.5px; color:rgba(241,236,223,0.55); margin-top:2px;}
+  @media(max-width:700px){.utility-row{grid-template-columns:1fr;}}
+
+  /* ---------- fullscreen modal (site map) ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:300; display:none;
+    background:rgba(0,15,30,0.94);
+  }
+  .modal-overlay.open{display:block;}
+  .modal-titlebar{
+    position:absolute; top:0; left:0; right:0; z-index:2;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 20px; background:linear-gradient(rgba(0,15,30,0.85), transparent);
+  }
+  .modal-titlebar .mt-label{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:rgba(241,236,223,0.7);}
+  .modal-close{
+    width:42px; height:42px; border-radius:50%; border:1px solid var(--line-strong);
+    background:rgba(241,236,223,0.05); color:var(--ivory); font-size:20px; line-height:1;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; transition:.2s;
+  }
+  .modal-close:hover{border-color:var(--brass-bright); color:var(--brass-bright);}
+  .site-map-controls{
+    position:absolute; top:18px; right:82px; z-index:4; display:flex; gap:6px; padding:6px;
+    border:1px solid var(--line-strong); background:rgba(0,31,61,.9); backdrop-filter:blur(8px);
+  }
+  .site-map-control{
+    min-width:40px; height:40px; padding:0 12px; border:1px solid var(--line-strong);
+    background:rgba(241,236,223,.05); color:var(--ivory); cursor:pointer;
+    font-family:'IBM Plex Mono',monospace; font-size:16px; line-height:1; transition:.2s;
+  }
+  .site-map-control.fit{font-size:10px; letter-spacing:.08em; text-transform:uppercase;}
+  .site-map-control:hover:not(:disabled){border-color:var(--brass-bright); color:var(--brass-bright);}
+  .site-map-control:disabled{opacity:.35; cursor:default;}
+  .site-map-control:focus-visible{outline:2px solid var(--brass-bright); outline-offset:2px;}
+  .site-map-viewport{
+    position:absolute; inset:70px 0 0; overflow:hidden; touch-action:none; overscroll-behavior:contain;
+    cursor:default; user-select:none; background:rgba(0,15,30,.28);
+  }
+  .site-map-viewport.is-zoomed{cursor:grab;}
+  .site-map-viewport.is-panning{cursor:grabbing;}
+  .site-map-stage{position:absolute; top:0; left:0; transform-origin:0 0; will-change:transform; visibility:hidden;}
+  .site-map-stage.ready{visibility:visible;}
+  .site-map-image{
+    display:block; width:auto; height:auto; max-width:none; pointer-events:none;
+    user-select:none; -webkit-user-drag:none; image-rendering:auto;
+  }
+  @media(max-width:560px){
+    .site-map-controls{top:80px; right:12px; gap:4px; padding:4px;}
+    .site-map-control{min-width:38px; height:38px; padding:0 10px;}
+    .site-map-viewport{inset:130px 0 0;}
+  }
+
+  footer{padding:36px 32px 60px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:11px; color:rgba(241,236,223,0.4); letter-spacing:0.05em;}
+
+  /* Structural note: content lives inside <main> and every section stacks
+     top-to-bottom with no fixed heights, so a future full print stylesheet
+     (page size, margins, pagination) can be added later without restructuring
+     the markup. */
+  @media print {
+    .no-print{display:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="eyebrow">Shanghai · October</div>
+    <div class="name display">VIP Guide</div>
+  </div>
+  <div class="nav-scroll-shell">
+    <nav class="navlinks mono" aria-label="Guide sections">
+      <a href="#order-of-play">Order of Play</a>
+      <a href="#ticket-registration">Ticket Registration</a>
+      <a href="#getting-there">Getting There</a>
+      <a href="#today">Hospitality</a>
+      <a href="#wayfinding">Find Your Seat</a>
+      <a href="#leaving">Leaving</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" src="images/rsm-logo.png" alt="Rolex Shanghai Masters and ATP Masters 1000">
+    <h1 class="display">Everything for your day, courtside.</h1>
+    <p>Today's matches, getting to the venue, opening hours and dining, and step-by-step wayfinding to your seats.</p>
+    <div class="hero-meta">
+      <div><div class="k">Date</div><div class="v mono" id="daily-date">—</div></div>
+      <div><div class="k">Session</div><div class="v mono" id="daily-session">—</div></div>
+      <div><div class="k">Gates Open</div><div class="v mono" id="daily-gates-open">—</div></div>
+      <div><div class="k">First Match</div><div class="v mono" id="daily-first-match">—</div></div>
+      <div><div class="k">Weather</div><div class="v mono" id="daily-weather">—</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="utility-row">
+  <button class="utility-card" id="open-sitemap" type="button">
+    <div class="uc-icon">⤢</div>
+    <div>
+      <div class="uc-label">View Site Map</div>
+      <div class="uc-sub">Full venue map, pinch to zoom</div>
+    </div>
+  </button>
+  <a class="utility-card" href="#getting-there">
+    <div class="uc-icon">→</div>
+    <div>
+      <div class="uc-label">Getting There</div>
+      <div class="uc-sub">Address & drop-off point</div>
+    </div>
+  </a>
+  <div class="utility-card static">
+    <div class="uc-icon">i</div>
+    <div>
+      <div class="uc-label">VIP Reception Desk</div>
+      <div class="uc-sub">Located at the entrance to the VIP Hospitality Pavilion</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<section id="order-of-play">
+  <div class="section-head">
+    <h2 class="display">Centre Court — Today's Matches</h2>
+  </div>
+  <div class="today-card" id="daily-order-of-play" style="padding:6px 28px;"></div>
+  <div class="btn-row">
+    <a class="btn" href="https://en.rolexshanghaimasters.com/en/scores/schedule" target="_blank" rel="noopener">Full Schedule →</a>
+  </div>
+</section>
+
+<section id="ticket-registration">
+  <div class="section-head">
+    <h2 class="display">Ticket Registration</h2>
+  </div>
+  <div class="registration-lead" role="note" aria-label="Registration deadline warning">
+    <div class="registration-lead-title">REGISTRATION DEADLINE — BEFORE 11:00 AM</div>
+    <p>Unregistered tickets expire after the deadline and cannot be replaced.</p>
+  </div>
+
+  <div class="registration-grid">
+    <div class="registration-card steps-panel">
+      <h3 class="display">Register Your Ticket</h3>
+      <ol class="registration-steps">
+        <li>
+          <div class="registration-step-head"><span class="registration-step-number">01 —</span><div class="registration-step-title">Scan</div></div>
+          <p class="registration-step-desc">Scan the QR code on your Invitation Voucher or digital registration QR code.</p>
+        </li>
+        <li>
+          <div class="registration-step-head"><span class="registration-step-number">02 —</span><div class="registration-step-title">Register</div></div>
+          <p class="registration-step-desc">Follow the English or Chinese guide and link your identity document to the ticket.</p>
+        </li>
+        <li>
+          <div class="registration-step-head"><span class="registration-step-number">03 —</span><div class="registration-step-title">Save Your Ticket</div></div>
+          <p class="registration-step-desc">Your ticket will appear in WeChat Wallet. <strong>Click the ticket to access your QR code</strong> and save a screenshot for easy access.</p>
+        </li>
+        <li>
+          <div class="registration-step-head"><span class="registration-step-number">04 —</span><div class="registration-step-title">Enter</div></div>
+          <p class="registration-step-desc">Scan the ticket QR code at the turnstiles and bring the same identity document used for registration.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="registration-card guide-panel">
+      <h3 class="display">Registration Guides</h3>
+      <div class="guide-list">
+        <a class="guide-card" href="guide/ticket-registration-guide-en.pdf" target="_blank" rel="noopener">
+          <div><div class="guide-language">English Guide</div><div class="guide-format">PDF · Step-by-step</div></div>
+          <div class="guide-status">Open Guide →</div>
+        </a>
+        <a class="guide-card" href="guide/ticket-registration-guide-cn.pdf" target="_blank" rel="noopener" lang="zh-CN">
+          <div><div class="guide-language">中文指南</div><div class="guide-format">PDF · 注册步骤</div></div>
+          <div class="guide-status">Open Guide →</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bring-card">
+    <h3 class="display">What to Bring to the Tournament</h3>
+    <ul class="bring-list">
+      <li>Ticket QR code in WeChat Wallet or a saved screenshot</li>
+      <li>Original identity document used for registration</li>
+      <li>Parking pass, if arriving in an accredited vehicle</li>
+    </ul>
+    <p class="bring-note"><strong>The identity document must be the same document linked to the ticket during registration.</strong></p>
+  </div>
+</section>
+
+<section id="getting-there">
+  <div class="section-head">
+    <h2 class="display">Getting to the Masters</h2>
+  </div>
+  <div class="driver-card">
+    <div class="dc-label">Gates Open · <span id="daily-gates-open-driver">—</span></div>
+    <div class="dc-cn">久事体育场馆旗忠网球中心（2号门）</div>
+    <div class="dc-en">Jiushi Sports Park — Qizhong Tennis Centre (Gate 2)</div>
+    <div class="dc-note">Show this address to your driver. Use the parking routes below to distinguish VIP / accredited vehicle access from public parking and drop-off.</div>
+  </div>
+
+  <div class="phase-label" style="margin-top:32px;">Parking & Drop-off</div>
+  <div class="parking-choices" role="tablist" aria-label="Choose parking instructions">
+    <button class="parking-choice vip" id="parking-tab-vip" type="button" role="tab" aria-selected="true" aria-controls="parking-panel-vip">
+      <span class="parking-choice-title">I HAVE A PARKING PASS</span>
+      <span class="parking-choice-sub">VIP Parking · Gate 1 · P1/P2</span>
+    </button>
+    <button class="parking-choice public" id="parking-tab-public" type="button" role="tab" aria-selected="false" aria-controls="parking-panel-public" tabindex="-1">
+      <span class="parking-choice-title">I DON'T HAVE A PARKING PASS</span>
+      <span class="parking-choice-sub">Public Parking · Taxi · Didi</span>
+    </button>
+  </div>
+
+  <div class="parking-panel" id="parking-panel-vip" role="tabpanel" aria-labelledby="parking-tab-vip">
+    <h3 class="display">VIP Parking · Gate 1 · P1/P2</h3>
+    <p class="parking-journey"><strong>Enter Gate 1 → Park in P1/P2 → Walk to Gate 2 for tournament entry.</strong></p>
+    <p>Gate 1 vehicle access requires the appropriate parking or accreditation pass.</p>
+    <button class="parking-map-button parking-map-trigger" type="button" data-map-title="VIP Parking · Gate 1 · P1/P2">
+      <img src="images/VIP%20parking2.webp" alt="VIP parking map showing Gate 1, parking areas P1 and P2, and the route to Gate 2">
+      <span class="parking-map-hint">Tap / click to enlarge</span>
+    </button>
+  </div>
+
+  <div class="parking-panel" id="parking-panel-public" role="tabpanel" aria-labelledby="parking-tab-public" hidden>
+    <h3 class="display">Public Parking · Taxi · Didi</h3>
+    <p class="parking-journey"><strong>After parking or drop-off, continue to Gate 2 for tournament entry.</strong></p>
+    <p>The map shows the available public and temporary parking, taxi, and ride-hailing arrangements around the venue.</p>
+    <button class="parking-map-button parking-map-trigger" type="button" data-map-title="Public Parking · Taxi · Didi">
+      <img src="images/Public%20Parking.webp" alt="Wider venue map showing public parking, taxi and ride-hailing arrangements, and Gate 2">
+      <span class="parking-map-hint">Tap / click to enlarge</span>
+    </button>
+  </div>
+</section>
+
+<section id="today">
+  <div class="section-head">
+    <h2 class="display">Hospitality — Opening Hours</h2>
+  </div>
+  <div class="today-grid">
+    <div class="today-card">
+      <h3>Hospitality Opening Hours</h3>
+      <div class="hours-row hospitality-open-row"><span>Hospitality opens</span><span id="daily-hospitality-open">—</span></div>
+      <div id="daily-hospitality-hours"></div>
+      <p class="note-inline">The Hospitality Pavilion closes when each dining service ends.</p>
+    </div>
+    <div class="today-card">
+      <h3>VIP Concierge</h3>
+      <div class="concierge-hours"><span id="daily-concierge-open">—</span> – 30 min after final match begins</div>
+      <ul class="concierge-services">
+        <li>Taxi booking</li>
+        <li>Luggage storage</li>
+        <li>VIP card service</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="wayfinding">
+  <div class="section-head">
+    <h2 class="display">Finding Your Way</h2>
+  </div>
+  <p class="route-intro">Use the overview map first, then match the key entrances and check-in points with the location photos below.</p>
+
+  <div class="route-map-card">
+    <div class="route-map-stage">
+      <img src="images/Find%20your%20way.webp" alt="Overview map showing the routes from Gate 2 to the main check-in points, Centre Court and VIP Hospitality" loading="lazy">
+    </div>
+  </div>
+
+  <div class="wayfinding-photo-grid">
+    <article class="wayfinding-photo-card">
+      <img class="wayfinding-photo" src="images/Main%20Gate.png" alt="Main Gate" loading="lazy">
+      <div class="wayfinding-photo-copy">
+        <h3>Main Gate</h3>
+        <p>The primary entrance to the tournament grounds.</p>
+      </div>
+    </article>
+    <article class="wayfinding-photo-card">
+      <img class="wayfinding-photo" src="images/Real%20Name%20Service%20Tent.png" alt="Real Name Service Tent" loading="lazy">
+      <div class="wayfinding-photo-copy">
+        <h3>Real Name Service Tent</h3>
+        <p>Identity verification for passport and travel-permit holders.</p>
+      </div>
+    </article>
+    <article class="wayfinding-photo-card">
+      <img class="wayfinding-photo" src="images/Main%20gate%20Checkin.png" alt="Main Gate Check-In" loading="lazy">
+      <div class="wayfinding-photo-copy">
+        <h3>Main Gate Check-In</h3>
+        <p>Ticket and guest check-in before entering the grounds.</p>
+      </div>
+    </article>
+    <article class="wayfinding-photo-card">
+      <img class="wayfinding-photo" src="images/Center%20Court%20Checkin.png" alt="Centre Court Check-In" loading="lazy">
+      <div class="wayfinding-photo-copy">
+        <h3>Centre Court Check-In</h3>
+        <p>The designated entry point for Centre Court access.</p>
+      </div>
+    </article>
+    <article class="wayfinding-photo-card">
+      <img class="wayfinding-photo" src="images/VIP%20Hospitality%20Entrance.png" alt="VIP Hospitality Entrance" loading="lazy">
+      <div class="wayfinding-photo-copy">
+        <h3>VIP Hospitality Entrance</h3>
+        <p>The entrance to the VIP hospitality area.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="leaving">
+
+
+
+  <div class="section-head">
+    <h2 class="display">Leaving the Masters</h2>
+  </div>
+  <div class="leaving-choice-grid">
+    <article class="leaving-choice">
+      <div class="parking-choice-title">I HAVE A CAR</div>
+      <div class="parking-choice-sub">VIP Parking · P1/P2</div>
+      <div class="leaving-choice-body">
+        <p>Return to your vehicle in P1/P2.</p>
+        <p>Vehicles leave the site through Gate 1.</p>
+      </div>
+    </article>
+    <article class="leaving-choice public">
+      <div class="parking-choice-title">I DON’T HAVE A CAR</div>
+      <div class="parking-choice-sub">Taxi · Didi</div>
+      <div class="leaving-choice-body">
+        <p>Leave the tournament grounds through Gate 2.</p>
+        <p>Taxi and Didi pick-up are located on the west side of the site.</p>
+        <button class="btn leaving-map-button parking-map-trigger" type="button" data-map-src="images/Public%20Parking.webp" data-map-alt="Public parking map showing taxi and ride-hailing pick-up and drop-off locations on the west side of the site" data-map-title="Public Parking · Taxi · Didi" data-map-initial-zoom="1.35" data-map-focus-x="0.53" data-map-focus-y="0.38">View Public Parking Map</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="access">
+  <div class="section-head">
+    <h2 class="display">Access This Guide</h2>
+  </div>
+  <div class="access-card">
+    <img src="images/rsm-vip-guide-qr.png" alt="QR code linking to this guide">
+    <div class="ac-text">
+      <h3 class="display">Scan to reopen this guide</h3>
+      <p>Scan the QR code to save easy access to the VIP Guide throughout your visit.</p>
+      <div class="ac-url">rsm-vip.github.io/RSM-VIP-Guide/</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="modal-overlay" id="sitemap-modal" role="dialog" aria-modal="true" aria-labelledby="sitemap-modal-title" aria-hidden="true">
+  <div class="modal-titlebar">
+    <div class="mt-label" id="sitemap-modal-title">Tournament Site Map</div>
+    <button class="modal-close" id="close-sitemap" type="button" aria-label="Close map">✕</button>
+  </div>
+  <div class="site-map-controls" aria-label="Site map zoom controls">
+    <button class="site-map-control" id="sitemap-zoom-out" type="button" aria-label="Zoom out" title="Zoom out">−</button>
+    <button class="site-map-control fit" id="sitemap-fit" type="button" aria-label="Fit map to screen" title="Fit map to screen">Fit</button>
+    <button class="site-map-control" id="sitemap-zoom-in" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+  </div>
+  <div class="site-map-viewport" id="sitemap-viewport">
+    <div class="site-map-stage" id="sitemap-stage">
+      <img class="site-map-image" id="sitemap-image" src="images/sitemap.png" alt="Full tournament site map" draggable="false">
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="parking-map-modal" role="dialog" aria-modal="true" aria-labelledby="parking-map-modal-title" aria-hidden="true">
+  <div class="modal-titlebar">
+    <div class="mt-label" id="parking-map-modal-title">Parking Map</div>
+    <button class="modal-close" id="close-parking-map" type="button" aria-label="Close parking map">✕</button>
+  </div>
+  <div class="site-map-controls" aria-label="Parking map zoom controls">
+    <button class="site-map-control" id="parking-map-zoom-out" type="button" aria-label="Zoom out" title="Zoom out">−</button>
+    <button class="site-map-control fit" id="parking-map-fit" type="button" aria-label="Fit map to screen" title="Fit map to screen">Fit</button>
+    <button class="site-map-control" id="parking-map-zoom-in" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+  </div>
+  <div class="site-map-viewport" id="parking-map-viewport">
+    <div class="site-map-stage" id="parking-map-stage">
+      <img class="site-map-image" id="parking-modal-image" src="images/VIP%20parking2.webp" alt="VIP parking map showing Gate 1, parking areas P1 and P2, and the route to Gate 2" draggable="false">
+    </div>
+  </div>
+</div>
+
+<footer>VIP GUIDE TEMPLATE · REPLACE ALL BRACKETED FIELDS BEFORE PUBLISHING</footer>
+
+<script src="daily-data.js"></script>
+<script>
+  // Load all information that changes daily from daily-data.js.
+  (()=>{
+    const data = window.DAILY_DATA;
+    if(!data){
+      console.error('daily-data.js could not be loaded. Keep it in the same folder as this HTML file.');
+      return;
+    }
+
+    const setText = (id, value)=>{
+      const element = document.getElementById(id);
+      if(element) element.textContent = value || '—';
+    };
+    const make = (tag, className, text)=>{
+      const element = document.createElement(tag);
+      if(className) element.className = className;
+      if(text !== undefined) element.textContent = text;
+      return element;
+    };
+    const oneHourBefore = (time)=>{
+      const parts = String(time || '').trim().match(/^(\d{1,2}):(\d{2})$/);
+      if(!parts) return '—';
+      const hour = (Number(parts[1]) + 23) % 24;
+      return `${String(hour).padStart(2, '0')}:${parts[2]}`;
+    };
+
+    setText('daily-date', data.date);
+    setText('daily-session', data.session);
+    setText('daily-gates-open', data.gatesOpen);
+    setText('daily-gates-open-driver', data.gatesOpen);
+    setText('daily-first-match', data.firstMatch);
+    setText('daily-weather', data.weather);
+    setText('daily-hospitality-open', data.hospitalityOpen);
+    setText('daily-concierge-open', oneHourBefore(data.firstMatch));
+
+    const orderOfPlay = document.getElementById('daily-order-of-play');
+    if(orderOfPlay && Array.isArray(data.orderOfPlay)){
+      const rows = [];
+      const hasSeparateSessions = String(data.separateSessions).trim().toLowerCase() === 'yes';
+      data.orderOfPlay.forEach((match, index)=>{
+        const row = make('div', 'match-row');
+        row.appendChild(make('div', 'match-time', match.time));
+
+        const middle = make('div', 'match-mid');
+        middle.appendChild(make('div', 'match-round', match.round));
+        middle.appendChild(make('div', 'match-players', match.players));
+        if(String(match.score || '').trim()) middle.appendChild(make('div', 'match-score', match.score));
+        row.appendChild(middle);
+
+        row.appendChild(make('div', 'match-court', match.note));
+        rows.push(row);
+
+        if(hasSeparateSessions && index === 1 && data.sessionBreak){
+          const sessionBreak = make('div', 'match-break');
+          sessionBreak.appendChild(make('div', 'break-label', 'Session Break'));
+          sessionBreak.appendChild(make('div', 'break-message', data.sessionBreak.message));
+          rows.push(sessionBreak);
+        }
+      });
+      orderOfPlay.replaceChildren(...rows);
+    }
+
+    const hospitalityHours = document.getElementById('daily-hospitality-hours');
+    if(hospitalityHours && Array.isArray(data.hospitalityHours)){
+      const rows = data.hospitalityHours.map((item)=>{
+        const row = make('div', 'hours-row');
+        row.appendChild(make('span', '', item.label));
+        const displayedHours = item.opens && item.closes ? `${item.opens} – ${item.closes}` : item.time;
+        row.appendChild(make('span', '', displayedHours));
+        return row;
+      });
+      hospitalityHours.replaceChildren(...rows);
+      const finalDiningService = [...data.hospitalityHours].reverse().find((item)=>item.closes);
+      setText('daily-suites-close', finalDiningService ? finalDiningService.closes : '—');
+    }
+  })();
+
+  // Show subtle edge fades only where more mobile navigation is available.
+  const navLinks = document.querySelector('.navlinks');
+  const navScrollShell = document.querySelector('.nav-scroll-shell');
+  const updateNavScrollFades = ()=>{
+    const maxScroll = Math.max(0, navLinks.scrollWidth - navLinks.clientWidth);
+    navScrollShell.classList.toggle('has-scroll-left', navLinks.scrollLeft > 2);
+    navScrollShell.classList.toggle('has-scroll-right', navLinks.scrollLeft < maxScroll - 2);
+  };
+  navLinks.addEventListener('scroll', updateNavScrollFades, {passive:true});
+  window.addEventListener('resize', updateNavScrollFades);
+  requestAnimationFrame(updateNavScrollFades);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(updateNavScrollFades);
+
+  // Shared high-resolution map viewer used by the Site Map and both parking maps.
+  const createMapViewer = ({modalId, viewportId, stageId, imageId, zoomOutId, zoomInId, fitId, closeId, titleId, focusCloseOnOpen = false})=>{
+    const modal = document.getElementById(modalId);
+    const viewport = document.getElementById(viewportId);
+    const stage = document.getElementById(stageId);
+    const image = document.getElementById(imageId);
+    const zoomOut = document.getElementById(zoomOutId);
+    const zoomIn = document.getElementById(zoomInId);
+    const fit = document.getElementById(fitId);
+    const closeButton = document.getElementById(closeId);
+    const title = document.getElementById(titleId);
+    const pointers = new Map();
+    let scale = 1;
+    let minScale = 1;
+    const maxScale = 1;
+    let x = 0;
+    let y = 0;
+    let dragPoint = null;
+    let pinchStart = null;
+    let opener = null;
+    let initialView = null;
+
+    const clamp = (value, minimum, maximum)=>Math.min(maximum, Math.max(minimum, value));
+    const constrainPosition = ()=>{
+      const scaledWidth = image.naturalWidth * scale;
+      const scaledHeight = image.naturalHeight * scale;
+      const viewportWidth = viewport.clientWidth;
+      const viewportHeight = viewport.clientHeight;
+      x = scaledWidth <= viewportWidth ? (viewportWidth - scaledWidth) / 2 : clamp(x, viewportWidth - scaledWidth, 0);
+      y = scaledHeight <= viewportHeight ? (viewportHeight - scaledHeight) / 2 : clamp(y, viewportHeight - scaledHeight, 0);
+    };
+    const render = ()=>{
+      stage.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+      stage.classList.add('ready');
+      const zoomed = scale > minScale + .001;
+      viewport.classList.toggle('is-zoomed', zoomed);
+      zoomOut.disabled = !zoomed;
+      zoomIn.disabled = scale >= maxScale - .001;
+    };
+    const fitToScreen = ()=>{
+      if(!image.naturalWidth || !viewport.clientWidth || !viewport.clientHeight) return;
+      const fitPadding = 24;
+      minScale = Math.min(
+        (viewport.clientWidth - fitPadding * 2) / image.naturalWidth,
+        (viewport.clientHeight - fitPadding * 2) / image.naturalHeight,
+        1
+      );
+      scale = minScale;
+      x = (viewport.clientWidth - image.naturalWidth * scale) / 2;
+      y = (viewport.clientHeight - image.naturalHeight * scale) / 2;
+      render();
+    };
+    const applyInitialView = ()=>{
+      fitToScreen();
+      if(!initialView || initialView.zoom <= 1 || !image.naturalWidth) return;
+      scale = clamp(minScale * initialView.zoom, minScale, maxScale);
+      x = viewport.clientWidth / 2 - image.naturalWidth * initialView.focusX * scale;
+      y = viewport.clientHeight / 2 - image.naturalHeight * initialView.focusY * scale;
+      constrainPosition();
+      render();
+    };
+    const zoomAt = (nextScale, clientX, clientY)=>{
+      if(!image.naturalWidth) return;
+      const rect = viewport.getBoundingClientRect();
+      const focusX = (clientX ?? rect.left + rect.width / 2) - rect.left;
+      const focusY = (clientY ?? rect.top + rect.height / 2) - rect.top;
+      const imageX = (focusX - x) / scale;
+      const imageY = (focusY - y) / scale;
+      scale = clamp(nextScale, minScale, maxScale);
+      x = focusX - imageX * scale;
+      y = focusY - imageY * scale;
+      constrainPosition();
+      render();
+    };
+    const zoomBy = (factor)=>zoomAt(scale * factor);
+    const open = ({trigger, src, alt, mapTitle, requestedInitialView} = {})=>{
+      opener = trigger || null;
+      initialView = requestedInitialView || null;
+      if(src && image.src !== src){
+        stage.classList.remove('ready');
+        image.src = src;
+      }
+      if(alt !== undefined) image.alt = alt;
+      if(mapTitle) title.textContent = mapTitle;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(()=>requestAnimationFrame(applyInitialView));
+      if(focusCloseOnOpen) closeButton.focus();
+    };
+    const close = ()=>{
+      if(!modal.classList.contains('open')) return;
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      pointers.clear();
+      viewport.classList.remove('is-panning');
+      if(opener) opener.focus();
+    };
+    const startPinch = ()=>{
+      if(pointers.size < 2) return;
+      const [first, second] = Array.from(pointers.values());
+      const rect = viewport.getBoundingClientRect();
+      const centreX = (first.x + second.x) / 2 - rect.left;
+      const centreY = (first.y + second.y) / 2 - rect.top;
+      pinchStart = {
+        distance: Math.hypot(second.x - first.x, second.y - first.y),
+        scale,
+        imageX: (centreX - x) / scale,
+        imageY: (centreY - y) / scale
+      };
+    };
+
+    zoomOut.addEventListener('click', ()=>zoomBy(1 / 1.25));
+    zoomIn.addEventListener('click', ()=>zoomBy(1.25));
+    fit.addEventListener('click', fitToScreen);
+    closeButton.addEventListener('click', close);
+    image.addEventListener('load', ()=>{
+      if(modal.classList.contains('open')) applyInitialView();
+    });
+    viewport.addEventListener('wheel', (event)=>{
+      event.preventDefault();
+      zoomAt(scale * (event.deltaY < 0 ? 1.18 : 1 / 1.18), event.clientX, event.clientY);
+    }, {passive:false});
+    viewport.addEventListener('pointerdown', (event)=>{
+      viewport.setPointerCapture(event.pointerId);
+      pointers.set(event.pointerId, {x:event.clientX, y:event.clientY});
+      if(event.pointerType !== 'mouse' || scale > minScale + .001) viewport.classList.add('is-panning');
+      if(pointers.size === 1){
+        dragPoint = {x:event.clientX, y:event.clientY};
+        pinchStart = null;
+      }else if(pointers.size === 2){
+        startPinch();
+      }
+    });
+    viewport.addEventListener('pointermove', (event)=>{
+      if(!pointers.has(event.pointerId)) return;
+      pointers.set(event.pointerId, {x:event.clientX, y:event.clientY});
+      if(pointers.size >= 2 && pinchStart){
+        const [first, second] = Array.from(pointers.values());
+        const rect = viewport.getBoundingClientRect();
+        const centreX = (first.x + second.x) / 2 - rect.left;
+        const centreY = (first.y + second.y) / 2 - rect.top;
+        const distance = Math.hypot(second.x - first.x, second.y - first.y);
+        scale = clamp(pinchStart.scale * distance / Math.max(1, pinchStart.distance), minScale, maxScale);
+        x = centreX - pinchStart.imageX * scale;
+        y = centreY - pinchStart.imageY * scale;
+        constrainPosition();
+        render();
+      }else if(pointers.size === 1 && dragPoint){
+        if(scale > minScale + .001){
+          x += event.clientX - dragPoint.x;
+          y += event.clientY - dragPoint.y;
+          constrainPosition();
+          render();
+        }
+        dragPoint = {x:event.clientX, y:event.clientY};
+      }
+    });
+    const endPointer = (event)=>{
+      pointers.delete(event.pointerId);
+      pinchStart = null;
+      if(pointers.size === 1){
+        const remaining = Array.from(pointers.values())[0];
+        dragPoint = {x:remaining.x, y:remaining.y};
+      }else{
+        dragPoint = null;
+        viewport.classList.remove('is-panning');
+      }
+    };
+    viewport.addEventListener('pointerup', endPointer);
+    viewport.addEventListener('pointercancel', endPointer);
+    modal.addEventListener('click', (event)=>{
+      if(event.target === modal) close();
+    });
+    document.addEventListener('keydown', (event)=>{
+      if(event.key === 'Escape') close();
+      if(!modal.classList.contains('open')) return;
+      if(event.key === '+' || event.key === '=') zoomBy(1.25);
+      if(event.key === '-') zoomBy(1 / 1.25);
+      if(event.key === '0') fitToScreen();
+    });
+    window.addEventListener('resize', ()=>{
+      if(modal.classList.contains('open')) fitToScreen();
+    });
+
+    return {open, close, fitToScreen};
+  };
+
+  const siteMapViewer = createMapViewer({
+    modalId:'sitemap-modal', viewportId:'sitemap-viewport', stageId:'sitemap-stage', imageId:'sitemap-image',
+    zoomOutId:'sitemap-zoom-out', zoomInId:'sitemap-zoom-in', fitId:'sitemap-fit',
+    closeId:'close-sitemap', titleId:'sitemap-modal-title'
+  });
+  document.getElementById('open-sitemap').addEventListener('click', (event)=>{
+    siteMapViewer.open({trigger:event.currentTarget});
+  });
+
+  // Parking choices and full-screen map viewer.
+  const parkingTabs = Array.from(document.querySelectorAll('.parking-choice[role="tab"]'));
+  const selectParkingTab = (selectedTab)=>{
+    parkingTabs.forEach((tab)=>{
+      const selected = tab === selectedTab;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
+    });
+  };
+  parkingTabs.forEach((tab, index)=>{
+    tab.addEventListener('click', ()=>selectParkingTab(tab));
+    tab.addEventListener('keydown', (event)=>{
+      if(event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      const nextTab = parkingTabs[(index + direction + parkingTabs.length) % parkingTabs.length];
+      selectParkingTab(nextTab);
+      nextTab.focus();
+    });
+  });
+
+  const parkingMapViewer = createMapViewer({
+    modalId:'parking-map-modal', viewportId:'parking-map-viewport', stageId:'parking-map-stage', imageId:'parking-modal-image',
+    zoomOutId:'parking-map-zoom-out', zoomInId:'parking-map-zoom-in', fitId:'parking-map-fit',
+    closeId:'close-parking-map', titleId:'parking-map-modal-title', focusCloseOnOpen:true
+  });
+  document.querySelectorAll('.parking-map-trigger').forEach((button)=>{
+    button.addEventListener('click', ()=>{
+      const sourceImage = button.querySelector('img');
+      parkingMapViewer.open({
+        trigger:button,
+        src:sourceImage ? sourceImage.src : button.dataset.mapSrc,
+        alt:sourceImage ? sourceImage.alt : button.dataset.mapAlt,
+        mapTitle:button.dataset.mapTitle,
+        requestedInitialView:button.dataset.mapInitialZoom ? {
+          zoom:Number(button.dataset.mapInitialZoom),
+          focusX:Number(button.dataset.mapFocusX),
+          focusY:Number(button.dataset.mapFocusY)
+        } : null
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
