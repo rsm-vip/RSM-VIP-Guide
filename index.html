@@ -265,11 +265,7 @@
   .match-row .match-time{font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--brass-bright); min-width:60px;}
   .match-row .match-mid{flex:1;}
   .match-row .match-round{font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:rgba(241,236,223,0.45); margin-bottom:4px;}
-  .match-row .match-players{
-  font-size:15px;
-  line-height:1.35;
-  word-break:keep-all;
-}
+  .match-row .match-players{font-size:15px; word-break:keep-all; overflow-wrap:normal;}
   .match-row .match-score{margin-top:5px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.4; color:rgba(241,236,223,.72);}
   .match-row .match-court{font-family:'IBM Plex Mono',monospace; font-size:11px; color:rgba(241,236,223,0.45); text-align:right; white-space:nowrap;}
   .match-break{display:flex; align-items:center; gap:14px; margin-top:-1px; padding:11px 0 12px; border-top:1px solid rgba(177,143,46,.7);}
@@ -277,12 +273,23 @@
   .match-break .break-message{font-size:11.5px; line-height:1.5; color:rgba(241,236,223,.55);}
   @media(max-width:560px){
     .match-break{align-items:flex-start; flex-direction:column; gap:5px;}
-
-    .match-row .match-players{
-    font-size:14px;
-    line-height:1.35;
-    word-break:keep-all;
   }
+  @media(max-width:600px){
+    #order-of-play{padding-left:16px; padding-right:16px;}
+    #order-of-play .section-head{align-items:flex-start; flex-direction:column; gap:9px; margin-bottom:24px;}
+    #order-of-play .section-head h2{max-width:100%; font-size:clamp(25px,7vw,29px); line-height:1.12;}
+    #order-of-play .section-head .tag{white-space:nowrap;}
+    #daily-order-of-play{padding:4px 12px !important;}
+    .match-row{
+      display:grid; grid-template-columns:38px minmax(0,1fr) max-content;
+      align-items:start; gap:8px; padding:14px 0;
+    }
+    .match-row .match-time{min-width:0; padding-top:1px; font-size:12.5px; line-height:1.35;}
+    .match-row .match-mid{min-width:0;}
+    .match-row .match-round{font-size:9px; line-height:1.35;}
+    .match-row .match-players{font-size:14px; line-height:1.35; word-break:keep-all; overflow-wrap:normal; hyphens:none;}
+    .match-row .match-score{margin-top:4px; font-size:11.5px; line-height:1.35;}
+    .match-row .match-court{min-width:0; max-width:none; font-size:9px; line-height:1.35; white-space:nowrap;}
   }
 
   /* ---------- wayfinding phases ---------- */
@@ -689,7 +696,7 @@
     <div class="tag">QR code</div>
   </div>
   <div class="access-card">
-   <img src="images/rsm-vip-guide-qr.png" alt="QR code linking to this guide">
+    <img src="images/rsm-vip-guide-qr.png" alt="QR code linking to this guide">
     <div class="ac-text">
       <h3 class="display">Scan to reopen this guide</h3>
       <p>Scan the QR code to save easy access to the VIP Guide throughout your visit.</p>
