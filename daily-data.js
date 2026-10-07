@@ -33,7 +33,7 @@ window.DAILY_DATA = {
     {
       time: "12:00",
       round: "Round 1",
-      players: " K. Coppejans vs S. Tsitsipas",
+      players: " K. Coppejans (Q) vs S. Tsitsipas",
       score: "",
       note: "Not before 12:00"
     },
@@ -47,14 +47,14 @@ window.DAILY_DATA = {
     {
       time: "18:00",
       round: "Round 1",
-      players: "L. Van Assche vs Y. Bu",
+      players: "L. Van Assche vs Y. Bu (WC)",
       score: "",
       note: "Not before 18:00"
     },
     {
       time: "21:00",
       round: "Round 1",
-      players: "C. Norrie vs D. Svrcina",
+      players: "C. Norrie vs D. Svrcina (Q)",
       score: "",
       note: "Follows Match 3"
     }
