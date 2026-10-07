@@ -11,11 +11,11 @@
 window.DAILY_DATA = {
 
   // TODAY AT A GLANCE
-  date: "07.10.2026",
-  session: "Day 1 · Round 1",
+  date: "08.10.2026",
+  session: "Day 2 · Round 1",
   gatesOpen: "10:30",
   firstMatch: "12:00",
-  weather: "30°C · Clear",
+  weather: "27°C · Clear",
 
   // CENTRE COURT ORDER OF PLAY
   // Use "yes" on normal tournament days.
@@ -33,28 +33,28 @@ window.DAILY_DATA = {
     {
       time: "12:00",
       round: "Round 1",
-      players: "[Player A] vs [Player B]",
+      players: " K. Coppejans vs S. Tsitsipas",
       score: "",
       note: "Not before 12:00"
     },
     {
       time: "14:30",
       round: "Round 1",
-      players: "[Player C] vs [Player D]",
+      players: "H. Hurkacz vs J. Duckworth",
       score: "",
       note: "Follows Match 1"
     },
     {
       time: "18:00",
       round: "Round 1",
-      players: "[Player E] vs [Player F]",
+      players: "L. Van Assche vs Y. Bu",
       score: "",
       note: "Not before 18:00"
     },
     {
       time: "21:00",
       round: "Round 1",
-      players: "[Player G] vs [Player H]",
+      players: "C. Norrie vs D. Svrcina",
       score: "",
       note: "Follows Match 3"
     }
