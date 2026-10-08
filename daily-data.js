@@ -34,14 +34,14 @@ window.DAILY_DATA = {
       time: "12:00",
       round: "Round 1",
       players: " K. Coppejans (Q) vs S. Tsitsipas",
-      score: "3-6, 5-7",
+      score: "3-6 5-7",
       note: "Not before 12:00"
     },
     {
       time: "14:30",
       round: "Round 1",
       players: "H. Hurkacz vs J. Duckworth",
-      score: "6-3, 7-6(4)",
+      score: "6-3 7-6(4)",
       note: "Follows Match 1"
     },
     {
