@@ -41,7 +41,7 @@ window.DAILY_DATA = {
       time: "14:30",
       round: "Round 1",
       players: "H. Hurkacz vs J. Duckworth",
-      score: "",
+      score: "6-3, 7-6(4)",
       note: "Follows Match 1"
     },
     {
