@@ -34,7 +34,7 @@ window.DAILY_DATA = {
       time: "12:00",
       round: "Round 1",
       players: " K. Coppejans (Q) vs S. Tsitsipas",
-      score: "",
+      score: "3-6, 5-7",
       note: "Not before 12:00"
     },
     {
