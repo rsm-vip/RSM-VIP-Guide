@@ -41,7 +41,7 @@ window.DAILY_DATA = {
       time: "14:30",
       round: "Round 2",
       players: "A. Zverev (1) vs Y. Wu",
-      score: "",
+      score: "6-3 7-6(4)",
       note: "Follows Match 1"
     },
     {
