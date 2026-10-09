@@ -12,10 +12,10 @@ window.DAILY_DATA = {
 
   // TODAY AT A GLANCE
   date: "09.10.2026",
-  session: "Day 3 · Round 2",
+  session: "Day 4 · Round 2",
   gatesOpen: "10:30",
   firstMatch: "12:00",
-  weather: "26°C · Cloudy",
+  weather: "26°C · Mostly Clear",
 
   // CENTRE COURT ORDER OF PLAY
   // Use "yes" on normal tournament days.
@@ -33,28 +33,28 @@ window.DAILY_DATA = {
     {
       time: "12:00",
       round: "Round 2",
-      players: " B. Shelton (3) vs D. Altmaier",
-      score: "6-3 7-6(6)",
+      players: "C. Ugo Carabelli vs F. Auger-Aliassime (4)",
+      score: "",
       note: "Not before 12:00"
     },
     {
       time: "14:30",
       round: "Round 2",
-      players: "A. Zverev (1) vs Y. Wu",
-      score: "6-3 7-6(4)",
+      players: "Y. Bu (WC) vs C. Ruud (20)",
+      score: "",
       note: "Follows Match 1"
     },
     {
       time: "18:00",
       round: "Round 2",
-      players: "N. Djokovic (10) vs H. Hurkacz",
+      players: "J. Cerundolo vs C. Alcaraz (2)",
       score: "",
       note: "Not before 18:00"
     },
     {
       time: "21:00",
       round: "Round 2",
-      players: "Y. Zhou (WC) vs L. Musetti (24)",
+      players: "S. Baez vs V. Vacherot (17)",
       score: "",
       note: "Follows Match 3"
     }
