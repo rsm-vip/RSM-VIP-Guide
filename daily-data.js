@@ -41,7 +41,7 @@ window.DAILY_DATA = {
       time: "14:30",
       round: "Round 2",
       players: "Y. Bu (WC) vs C. Ruud (20)",
-      score: "",
+      score: "1-6 (2)6-7",
       note: "Follows Match 1"
     },
     {
