@@ -34,7 +34,7 @@ window.DAILY_DATA = {
       time: "12:00",
       round: "Round 2",
       players: "C. Ugo Carabelli vs F. Auger-Aliassime (4)",
-      score: "",
+      score: "4-6 (1)6-7 5-7",
       note: "Not before 12:00"
     },
     {
