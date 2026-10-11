@@ -34,7 +34,7 @@ window.DAILY_DATA = {
       time: "12:00",
       round: "Round 3",
       players: "B. Shelton (3) vs A. Gea",
-      score: "",
+      score: "(5)6-7 (3)6-7",
       note: "Not before 12:00"
     },
     {
