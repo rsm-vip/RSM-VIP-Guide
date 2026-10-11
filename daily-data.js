@@ -47,7 +47,7 @@ window.DAILY_DATA = {
     {
       time: "18:00",
       round: "Round 3",
-      players: "A. Zverev (1) vs. Q Halys",
+      players: "A. Zverev (1) vs. Q. Halys",
       score: "",
       note: "Not before 18:00"
     },
