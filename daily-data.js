@@ -41,7 +41,7 @@ window.DAILY_DATA = {
       time: "14:30",
       round: "Round 3",
       players: "H. Hurkacz vs Y. Zhou (WC)",
-      score: "",
+      score: "6-2 3-6 6-3",
       note: "Follows Match 1"
     },
     {
