@@ -12,10 +12,10 @@ window.DAILY_DATA = {
 
   // TODAY AT A GLANCE
   date: "11.10.2026",
-  session: "Day 5 · Round 3",
+  session: "Day 6 · Round 3",
   gatesOpen: "10:30",
   firstMatch: "12:00",
-  weather: "26°C · Mostly Sunny",
+  weather: "26°C · Sunny ",
 
   // CENTRE COURT ORDER OF PLAY
   // Use "yes" on normal tournament days.
@@ -33,28 +33,28 @@ window.DAILY_DATA = {
     {
       time: "12:00",
       round: "Round 3",
-      players: "B. Shelton (3) vs A. Gea",
-      score: "(5)6-7 (3)6-7",
+      players: "P. Carreno Busta vs. F. Auger-Aliassime (4)",
+      score: "",
       note: "Not before 12:00"
     },
     {
       time: "14:30",
       round: "Round 3",
-      players: "H. Hurkacz vs Y. Zhou (WC)",
-      score: "6-2 3-6 6-3",
+      players: "S. Tsitsipas vs T. Fritz (11)",
+      score: "",
       note: "Follows Match 1"
     },
     {
       time: "18:00",
       round: "Round 3",
-      players: "A. Zverev (1) vs. Q. Halys",
+      players: "Z. Bergs vs. C. Alcaraz (2)",
       score: "",
       note: "Not before 18:00"
     },
     {
       time: "21:00",
       round: "Round 3",
-      players: "A. Fokina (25) vs. F. Tiafoe (7) ",
+      players: "T. Paul (15) vs V. Vacherot (17) ",
       score: "",
       note: "Follows Match 3"
     }
