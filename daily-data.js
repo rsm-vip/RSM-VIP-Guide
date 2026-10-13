@@ -11,8 +11,8 @@
 window.DAILY_DATA = {
 
   // TODAY AT A GLANCE
-  date: "11.10.2026",
-  session: "Day 6 · Round 3",
+  date: "13.10.2026",
+  session: "Day 7 · Last 16",
   gatesOpen: "10:30",
   firstMatch: "12:00",
   weather: "26°C · Sunny ",
@@ -32,29 +32,29 @@ window.DAILY_DATA = {
   orderOfPlay: [
     {
       time: "12:00",
-      round: "Round 3",
-      players: "P. Carreno Busta vs. F. Auger-Aliassime (4)",
+      round: "Last 16",
+      players: "A. De Minaur vs. K. Khachanov",
       score: "",
       note: "Not before 12:00"
     },
     {
       time: "14:30",
-      round: "Round 3",
-      players: "S. Tsitsipas vs T. Fritz (11)",
+      round: "Last 16",
+      players: "A. Gea vs. J. Mensik",
       score: "",
       note: "Follows Match 1"
     },
     {
       time: "18:00",
-      round: "Round 3",
-      players: "Z. Bergs vs. C. Alcaraz (2)",
+      round: "Last 16",
+      players: "A. Zverev vs. A. Bublik",
       score: "",
       note: "Not before 18:00"
     },
     {
       time: "21:00",
-      round: "Round 3",
-      players: "T. Paul (15) vs V. Vacherot (17) ",
+      round: "Last 16",
+      players: "A. Hurkacz vs. A. Davidovich Fokina",
       score: "",
       note: "Follows Match 3"
     }
