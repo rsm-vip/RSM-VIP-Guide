@@ -11,16 +11,16 @@
 window.DAILY_DATA = {
 
   // TODAY AT A GLANCE
-  date: "14.10.2026",
-  session: "Day 8 · Last 16",
+  date: "15.10.2026",
+  session: "Day 9 · Quater-Finals",
   gatesOpen: "10:30",
   firstMatch: "12:00",
-  weather: "26°C · Sunny ",
+  weather: "24°C · Cloudy ",
 
   // CENTRE COURT ORDER OF PLAY
   // Use "yes" on normal tournament days.
   // Change to "no" for the final 4 days, when there are no separate sessions.
-  separateSessions: "yes",
+  separateSessions: "no",
 
   // When separateSessions is "yes", this notice appears after Match 2.
   sessionBreak: {
@@ -32,29 +32,29 @@ window.DAILY_DATA = {
   orderOfPlay: [
     {
       time: "12:00",
-      round: "Last 16",
-      players: "B. van de Zandschlup vs. R. Jodar",
+      round: "Quarter-final",
+      players: "C. Harrison / N. Skupski vs. M. Wallner / J. Schnaitter",
       score: "",
       note: "Not before 12:00"
     },
     {
       time: "14:30",
-      round: "Last 16",
-      players: "C. Ruud vs. F Auger-Aliassime",
+      round: "Quarter-final",
+      players: "A. Gea vs. A. Davidovich Fokina",
       score: "",
-      note: "Follows Match 1"
+      note: "Not before 14:30"
     },
     {
       time: "18:00",
-      round: "Last 16",
-      players: "D. Medvedev vs. S. Tsitsipas",
+      round: "Quarter-final",
+      players: "A. Zverev vs. A. De Minaur",
       score: "",
       note: "Not before 18:00"
     },
     {
       time: "21:00",
-      round: "Last 16",
-      players: "T. Paul vs. Zizou Bergs",
+      round: "Quarter-final",
+      players: "N. Oberleitner / L. Miedler vs. M. Polmans / J. Zielinski",
       score: "",
       note: "Follows Match 3"
     }
