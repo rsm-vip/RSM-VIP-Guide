@@ -11,8 +11,8 @@
 window.DAILY_DATA = {
 
   // TODAY AT A GLANCE
-  date: "13.10.2026",
-  session: "Day 7 · Last 16",
+  date: "14.10.2026",
+  session: "Day 8 · Last 16",
   gatesOpen: "10:30",
   firstMatch: "12:00",
   weather: "26°C · Sunny ",
@@ -33,28 +33,28 @@ window.DAILY_DATA = {
     {
       time: "12:00",
       round: "Last 16",
-      players: "A. De Minaur vs. K. Khachanov",
+      players: "B. van de Zandschlup vs. R. Jodar",
       score: "",
       note: "Not before 12:00"
     },
     {
       time: "14:30",
       round: "Last 16",
-      players: "A. Gea vs. J. Mensik",
+      players: "C. Ruud vs. F Auger-Aliassime",
       score: "",
       note: "Follows Match 1"
     },
     {
       time: "18:00",
       round: "Last 16",
-      players: "A. Zverev vs. A. Bublik",
+      players: "D. Medvedev vs. S. Tsitsipas",
       score: "",
       note: "Not before 18:00"
     },
     {
       time: "21:00",
       round: "Last 16",
-      players: "A. Hurkacz vs. A. Davidovich Fokina",
+      players: "T. Paul vs. Zizou Bergs",
       score: "",
       note: "Follows Match 3"
     }
