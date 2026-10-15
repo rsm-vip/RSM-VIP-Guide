@@ -11,11 +11,11 @@
 window.DAILY_DATA = {
 
   // TODAY AT A GLANCE
-  date: "15.10.2026",
-  session: "Day 9 · Quater-Finals",
+  date: "16.10.2026",
+  session: "Day 10 · Quater-Finals",
   gatesOpen: "10:30",
   firstMatch: "12:00",
-  weather: "24°C · Cloudy ",
+  weather: "26°C · Partly sunny, showers in the evening ",
 
   // CENTRE COURT ORDER OF PLAY
   // Use "yes" on normal tournament days.
@@ -33,28 +33,28 @@ window.DAILY_DATA = {
     {
       time: "12:00",
       round: "Quarter-final",
-      players: "C. Harrison / N. Skupski vs. M. Wallner / J. Schnaitter",
+      players: "T. Arribage / A. Olivetti vs. F. Cabral / J. Tracey",
       score: "",
       note: "Not before 12:00"
     },
     {
       time: "14:30",
       round: "Quarter-final",
-      players: "A. Gea vs. A. Davidovich Fokina",
+      players: "R. Jodar vs. C. Ruud",
       score: "",
       note: "Not before 14:30"
     },
     {
       time: "18:00",
       round: "Quarter-final",
-      players: "A. Zverev vs. A. De Minaur",
+      players: "D. Medvedev vs. T. Paul",
       score: "",
       note: "Not before 18:00"
     },
     {
       time: "21:00",
-      round: "Quarter-final",
-      players: "N. Oberleitner / L. Miedler vs. M. Polmans / J. Zielinski",
+      round: "Roger Federer Exhibition Match",
+      players: "R. Federer / Na Li vs. D. Safina / M. Safin",
       score: "",
       note: "Follows Match 3"
     }
