@@ -11,11 +11,11 @@
 window.DAILY_DATA = {
 
   // TODAY AT A GLANCE
-  date: "16.10.2026",
-  session: "Day 10 · Quater-Finals",
-  gatesOpen: "10:30",
-  firstMatch: "12:00",
-  weather: "26°C · Partly sunny, showers in the evening ",
+  date: "17.10.2026",
+  session: "Day 11 · Semi-Finals",
+  gatesOpen: "12:30",
+  firstMatch: "14:00",
+  weather: "28°C · Cloudy",
 
   // CENTRE COURT ORDER OF PLAY
   // Use "yes" on normal tournament days.
@@ -31,41 +31,35 @@ window.DAILY_DATA = {
 
   orderOfPlay: [
     {
-      time: "12:00",
-      round: "Quarter-final",
-      players: "T. Arribage / A. Olivetti vs. F. Cabral / J. Tracey",
+      time: "14:00",
+      round: "Semi-final",
+      players: "J. Schnaitter / M. Wallner vs. L. Miedler / N. Oberleitner",
       score: "",
-      note: "Not before 12:00"
+      note: "Not before 14:00"
     },
     {
-      time: "14:30",
-      round: "Quarter-final",
-      players: "R. Jodar vs. C. Ruud",
+      time: "16:30",
+      round: "Semi-final",
+      players: "A. Zverev vs. A. Davidovich Fokina",
       score: "",
-      note: "Not before 14:30"
+      note: "Not before 16:30"
     },
     {
-      time: "18:00",
-      round: "Quarter-final",
-      players: "D. Medvedev vs. T. Paul",
+      time: "19:00",
+      round: "Semi-final",
+      players: "D. Medvedev vs. J. Jodar",
       score: "",
-      note: "Not before 18:00"
+      note: "Not before 19:00"
     },
     {
-      time: "21:00",
-      round: "Roger Federer Exhibition Match",
-      players: "R. Federer / Na Li vs. D. Safina / M. Safin",
-      score: "",
-      note: "Follows Match 3"
-    }
-  ],
+  
 
   // HOSPITALITY OPENING HOURS
-  hospitalityOpen: "11:30",
+  hospitalityOpen: "15:00",
 
   hospitalityHours: [
-    { label: "Lunch service", opens: "11:30", closes: "15:00" },
-    { label: "Dinner service", opens: "17:00", closes: "21:30" },
-    { label: "Bar service", time: "17:00", closes: "21:30" }
+    { label: "F&B service", opens: "15:00", closes: "21:30" },
+    
+    
   ]
 };
