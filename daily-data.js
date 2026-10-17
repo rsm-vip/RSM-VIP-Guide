@@ -50,6 +50,7 @@ window.DAILY_DATA = {
       players: "D. Medvedev vs. J. Jodar",
       score: "",
       note: "Not before 19:00"
+     }
     ],
   
 
