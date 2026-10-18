@@ -11,11 +11,11 @@
 window.DAILY_DATA = {
 
   // TODAY AT A GLANCE
-  date: "17.10.2026",
-  session: "Day 11 · Semi-Finals",
+  date: "18.10.2026",
+  session: "Day 12 · Finals",
   gatesOpen: "12:30",
   firstMatch: "14:00",
-  weather: "28°C · Cloudy",
+  weather: "31°C · Partly Cloudy",
 
   // CENTRE COURT ORDER OF PLAY
   // Use "yes" on normal tournament days.
@@ -32,24 +32,17 @@ window.DAILY_DATA = {
   orderOfPlay: [
     {
       time: "14:00",
-      round: "Semi-final",
-      players: "J. Schnaitter / M. Wallner vs. L. Miedler / N. Oberleitner",
+      round: "Doubles final",
+      players: "F. Cabral / J. Tracey vs. L. Miedler / N. Oberleitner",
       score: "",
       note: "Not before 14:00"
     },
     {
       time: "16:30",
       round: "Semi-final",
-      players: "A. Zverev vs. A. Davidovich Fokina",
+      players: "A. Davidovich vs. J. Jodar",
       score: "",
       note: "Not before 16:30"
-    },
-    {
-      time: "19:00",
-      round: "Semi-final",
-      players: "D. Medvedev vs. J. Jodar",
-      score: "",
-      note: "Not before 19:00"
      }
     ],
   
@@ -58,8 +51,6 @@ window.DAILY_DATA = {
   hospitalityOpen: "15:00",
 
   hospitalityHours: [
-    { label: "F&B service", opens: "15:00", closes: "21:30" },
-    
-    
+    { label: "F&B service", opens: "15:00", closes: "21:30" },    
   ]
 };
