@@ -39,7 +39,7 @@ window.DAILY_DATA = {
     },
     {
       time: "16:30",
-      round: "Semi-final",
+      round: "Singles final",
       players: "A. Davidovich vs. J. Jodar",
       score: "",
       note: "Not before 16:30"
